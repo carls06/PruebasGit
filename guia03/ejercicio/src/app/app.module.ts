@@ -9,6 +9,8 @@ import { Ejer2Component } from './components/ejer2/ejer2.component';
 //Rutas
 import { APP_ROUTING } from "./app.routes";
 
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,9 @@ import { APP_ROUTING } from "./app.routes";
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

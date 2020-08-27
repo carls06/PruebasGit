@@ -9,7 +9,7 @@ const APP_ROUTES: Routes = [
     { path: 'ejer2', component: Ejer2Component },
     
    
-    { path: '**', pathMatch:'full', redirectTo:'home' },
+    { path: '**', pathMatch:'full', redirectTo:'ejer1' },
     ];
 
 
