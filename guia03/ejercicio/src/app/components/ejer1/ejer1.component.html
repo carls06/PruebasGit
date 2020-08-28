@@ -1,1 +1,101 @@
-<p>ejer1 works!</p>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3">Ejercicio 1</h1>
+        <p class="lead">Crear una aplicación que determine el sueldo neto n empleados, tomando en cuenta que se le
+            aplican los siguientes descuentos de ley a su sueldo base: + ISSS: tasa del 7.3% + Renta: 11% +
+            AFP: 5.1% Muestre los montos de cada descuento y el sueldo final. Utilice buena presentación
+            de la tabla y validación de la entrada del usuario.</p>
+        <hr class="my-2">   
+    </div>
+</div>
+
+<form autocomplete="off" [formGroup]="forma" (ngSubmit) = "guardar()">
+
+
+
+<div>
+
+<div class="form-group row" >
+
+    <label class= "col-2 col-form-label">Nombre:</label>
+    <div class="col-8" >
+        <input class="form-control"
+                type ="text"
+                placeholder="Nombre"
+                formControlName="nombre"
+               [class.is-invalid]="nombreNoValido">
+               <small *ngIf="nombreNoValido" class="text-danger"> 
+               Ingrese el nombre    
+               </small>
+    </div>
+</div>
+
+<div class="form-group row" >
+
+    <label class= "col-2 col-form-label">Sueldo en ($):</label>
+    <div class="col-8" >
+        <input class="form-control"
+                type ="number"
+                placeholder="Ingrese el sueldo aqui"
+                formControlName="sueldo"
+                [class.is-invalid]="SueldoNovalido"
+                >
+                <small *ngIf="SueldoNovalido" class="text-danger"> 
+                    Ingrese el sueldo  
+                    </small>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-2 col-form-label"for=""> &nbsp;</label>
+    <div class="input-group col-md-8">
+        <button type="submit" class="btn btn-outline-primary btn-block" >
+            Guardar
+        </button>
+
+    </div>
+
+</div>
+
+<div class="row">
+   
+     
+
+</div>
+
+
+
+
+
+</div>
+
+</form>
+
+<hr>
+<pre>
+    El estado del formulario: {{forma.valid}}
+    <br>
+</pre>
+
+<pre>
+    {{forma.value | json}}
+</pre>
+
+<pre>
+   Nombre: {{forma.value.nombre}}
+   Sueldo: {{forma.value.sueldo}}
+   ISSS: {{this.isss}}
+    Renta:{{this.renta}}
+    AFP:{{this.afp}}
+    Total:{{this.total}}
+
+    
+</pre>
+
+<label>  </label>
+
+
+
+
+
+
