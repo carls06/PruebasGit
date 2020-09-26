@@ -1,0 +1,116 @@
+<!--<div class="container   py-5">
+  <div class="row ">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6 mx-auto ">
+
+          <div class="card rounded-5">
+            <div class="card-header">
+              <h3 class="mb-">Sign In</h3>
+            </div>
+            <div class="displayTable">
+              <div class="displayTableCell">
+                <div class="authBlock">
+
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" #userName required>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" #userPassword required>
+                  </div>
+
+                  <div class="forgotPassword">
+                    <span routerLink="/forgot-password">Forgot Password?</span>
+                  </div>
+
+                  <br>  
+
+                 
+                  <div class="form-group">
+                    <input type="button" class="btn btn-success btn-lg float-left" value="Log in"
+                      (click)="authService.SignIn(userName.value, userPassword.value)">
+                  </div>
+            
+                  <br>
+
+                  <div class="form-group">
+                    <span class="or"><span class="orInner left">Or</span></span>
+                  </div>
+
+                  
+                  <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-lg float-left" (click)="authService.GoogleAuth()">
+                      <i class="fab fa-google-plus-g"></i>
+                      Log in with Google
+                    </button>
+                  </div>
+
+                  <br> <br>
+
+
+                </div>
+
+                <br>
+
+                <div class="redirectToLogin">
+                  <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+ 
+  </div>
+</div>
+-->
+ <div id="logreg-forms" class="card rounded-5 ">
+  <form class="form-signin  ">
+      <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Log in</h1>
+      <div class="social-login">
+          <button class="btn facebook-btn social-btn"  type="button"><span><i class="fab fa-facebook-f"></i> log in with Facebook</span> </button>
+          <button class="btn google-btn social-btn" (click)="authService.GoogleAuth()" type="button"><span><i class="fab fa-google-plus-g"></i> log in with Google+</span> </button>
+      </div>
+      <p style="text-align:center"> OR  </p>
+      <input type="email" id="userName" class="form-control" placeholder="Email address"  #userName required  autofocus="">
+      <input type="password" id="userPassword" class="form-control" placeholder="Password"  #userPassword required>
+      
+        <input type="button" class="btn btn-success btn-block mt-3" value="Log in"
+                      (click)="authService.SignIn(userName.value, userPassword.value)">
+      
+      <hr>
+    
+      <button class="btn btn-primary btn-block" routerLink="/register-user" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button>
+      </form>
+
+      <form action="/reset/password/" class="form-reset">
+          <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+          <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+          <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+      </form>
+      
+      <form action="/signup/" class="form-signup">
+          <div class="social-login">
+              <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
+          </div>
+          <div class="social-login">
+              <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
+          </div>
+          
+          <p style="text-align:center">OR</p>
+
+          <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
+          <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+          <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+          <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+
+          <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+          <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+      </form>
+      <br>
+      
+</div>
